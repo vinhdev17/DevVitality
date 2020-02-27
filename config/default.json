@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://avi123:avi123@devconnector-hfwpn.mongodb.net/DEVCONNECTOR?retryWrites=true&w=majority",
-  "jwtSecret": "NEVER DIE"
+  "jwtSecret": "NEVER DIE",
+  "githubClientId": "0a5a6620ab8872cc2188",
+  "githubSecret": "de107892f29164c3cbfccf8cda6abe5ccd0c7fd8"
 }
