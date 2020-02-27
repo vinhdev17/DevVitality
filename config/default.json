@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://avi123:avi123@devconnector-hfwpn.mongodb.net/DEVCONNECTOR?retryWrites=true&w=majority",
+  "jwtSecret": "NEVER DIE"
+}
