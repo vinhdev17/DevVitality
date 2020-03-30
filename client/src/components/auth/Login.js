@@ -22,9 +22,6 @@ const Login = () => {
 
   return (
     <Fragment>
-      {/* Alert */}
-      <div className='alert alert-danger'>Invalid Credentials</div>
-
       <a href='dashboard.html' className='my-1'>
         <i className='fas fa-code fa-4x'></i>
       </a>
