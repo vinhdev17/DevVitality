@@ -1,40 +1,47 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../../actions/auth";
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    password2: ""
+    password2: "",
   });
 
-  const { name, email, password, password2 } = formData;
+  const { email, password } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("SUCCESS");
+    login(email, password);
   };
 
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
+
   return (
-    <Fragment>
-      <a href='dashboard.html' className='my-1'>
+    <div className='container container-center'>
+      <Link to='/' className='my-1'>
         <i className='fas fa-code fa-4x'></i>
-      </a>
+      </Link>
       <p className='text-light font-weight-normal my-1'>
         Sign in to DevVitality
       </p>
-      <form className='form' onSubmit={e => onSubmit(e)}>
+      <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <input
             type='email'
             name='email'
             placeholder='Email Address'
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             value={email}
           />
         </div>
@@ -43,7 +50,7 @@ const Login = () => {
             type='password'
             name='password'
             placeholder='Password'
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             value={password}
             minLength='6'
           />
@@ -57,10 +64,19 @@ const Login = () => {
       </form>
       <p className='my-1'>
         New to DevVitality?
-        <Link to='/register'>Create an account</Link>
+        <Link to='/register'> Create an account</Link>
       </p>
-    </Fragment>
+    </div>
   );
 };
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);
