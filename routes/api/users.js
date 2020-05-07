@@ -14,14 +14,12 @@ const User = require("../../models/User");
 router.post(
   "/",
   [
-    check("name", "Name is required")
-      .not()
-      .isEmpty(),
+    check("name", "Name is required").not().isEmpty(),
     check("email", "Please include a valid email").isEmail(),
     check(
       "password",
       "Please enter a password with 6 or more characters"
-    ).isLength({ min: 6 })
+    ).isLength({ min: 6 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -43,26 +41,25 @@ router.post(
       const avatar = gravatar.url(email, {
         s: "1000",
         r: "pg",
-        d: "mm"
+        d: "mm",
       });
 
       user = new User({
         name,
         email,
         avatar,
-        password
+        password,
       });
 
       const salt = await bcrypt.genSaltSync(10);
-      console.log(salt);
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
 
       const payload = {
         user: {
-          id: user.id
-        }
+          id: user.id,
+        },
       };
 
       jwt.sign(
