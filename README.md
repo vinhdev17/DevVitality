@@ -2,10 +2,10 @@
 
 A social networking for all developers on the world
 
-## Versioning
+## Version
 
 ```
-Version v1.0.0
+v1.0.0
 ```
 
 ## Authors
