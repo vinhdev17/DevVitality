@@ -1,16 +1,5 @@
-# DevVitality
-
+# DevVitality  [![version](https://img.shields.io/badge/version-v1.0.0-blue)](https://devvitality.herokuapp.com/) [![author](https://img.shields.io/badge/author-avitryhard-blueviolet)](https://github.com/avitryhard)
 A social networking for all developers on the world
-
-## Version
-
-```
-v1.0.0
-```
-
-## Authors
-
-* **Le Quang Vinh** - *Initial work* - [avitryhard](https://github.com/avitryhard)
 
 ## License
 
