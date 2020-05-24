@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * [NodeJS](https://nodejs.org) - A Javascript runtime
 
-![TEST](https://gph.is/g/E1n0Opq)
+![Install NodeJS](https://github.com/avitryhard/DevVitality/blob/readme/install-nodejs.gif)
 
 ### Installing
 
