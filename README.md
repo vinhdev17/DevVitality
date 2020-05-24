@@ -38,6 +38,10 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app
   <img src='https://github.com/avitryhard/DevVitality/blob/readme/install-app.gif' alt='Installing NodeJS'>
 </p>
 
+## Deployment
+
+* [DevVitality](https://devvitality.herokuapp.com) - Deloyed to [Heroku](https://www.heroku.com/)
+
 ## Project Structure
 
 ```
@@ -82,7 +86,3 @@ DevVitality
         └── utils
           └── setAuthToken.js
 ```
-
-## Deployment
-
-* [DevVitality](https://devvitality.herokuapp.com) - Deloyed to [Heroku](https://www.heroku.com/)
