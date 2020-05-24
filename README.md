@@ -96,4 +96,6 @@ DevVitality
 
 ## Deployment
 
-[DevVitality](https://devvitality.herokuapp.com)
+```
+* [DevVitality](https://devvitality.herokuapp.com) - Deloyed on Heruku
+```
